@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Marla to Square Feet Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            width: 50%;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Marla to Square Feet Converter</h1>
+        <form id="areaConverterForm">
+            <label for="marla">Enter Marla:</label>
+            <input type="number" id="marla" step="0.01" required>
+            <input type="submit" value="Convert">
+        </form>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        document.getElementById("areaConverterForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+            // Get the input value
+            const marla = parseFloat(document.getElementById("marla").value);
+
+            // Convert Marla to Square Feet (1 Marla = 272.25 square feet)
+            const squareFeet = marla * 272.25;
+
+            // Display the result
+            document.getElementById("result").innerHTML = `${marla} Marla is equal to ${squareFeet.toFixed(2)} Square Feet.`;
+        });
+    </script>
+</body>
+</html>
